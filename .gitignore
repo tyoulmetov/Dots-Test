@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+Front/test_formulaire/node_modules
+Front/test_formulaire/.pnp
+Front/test_formulaire/.pnp.js
+
+# testing
+Front/test_formulaire/coverage
+
+# production
+Front/test_formulaire/build
+
+# misc
+Front/test_formulaire/.DS_Store
+Front/test_formulaire/.env.local
+Front/test_formulaire/.env.development.local
+Front/test_formulaire/.env.test.local
+Front/test_formulaire/.env.production.local
+
+Front/test_formulaire/npm-debug.log*
+Front/test_formulaire/yarn-debug.log*
+Front/test_formulaire/yarn-error.log*
