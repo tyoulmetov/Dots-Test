@@ -1,0 +1,72 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;140&lt;/x&gt;&lt;y&gt;220&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;100&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;_Person_
+--
+firstname : string
+lastname: string
+email: string
+telephone: int(10)
+&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;500&lt;/x&gt;&lt;y&gt;330&lt;/y&gt;&lt;w&gt;210&lt;/w&gt;&lt;h&gt;130&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;_Person_
+--
+firstname : string
+lastname: string
+email: string
+telephone: int(10)
+&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>120</x><y>330</y><w>180</w><h>160</h></coordinates><panel_attributes>_Company_
+--
+id: int (primary key)
+name : string
+logo : image
+website : string
+descritpion : string
+
+creator : int (foreign key: User)
+shared: boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>150</y><w>180</w><h>170</h></coordinates><panel_attributes>_Person_
+--
+id: int (primary key)
+firstname : string
+lastname: string
+email: string
+telephone: int(10)
+
+creator : int (foreign key: User)
+shared: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>500</y><w>180</w><h>150</h></coordinates><panel_attributes>_Product_
+--
+id: int (primary key)
+name : string
+descritpion : string
+price: float
+
+creator : int (foreign key: User)
+shared: boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>660</y><w>180</w><h>170</h></coordinates><panel_attributes>_Project_
+--
+id: int (primary key)
+name: string
+StartDate: date
+EndDate: date
+Manager: Person
+budget: float
+
+creator : int (foreign key: User)
+shared: boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>790</x><y>320</y><w>210</w><h>120</h></coordinates><panel_attributes>_User_
+--
+id: int (primary key)
+userName: string
+mail: string
+password: string
+telephone: int(10)
+admin: boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>260</y><w>520</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;270;10;270;70;500;70</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>380</y><w>520</w><h>250</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;230;440;230;440;10;500;10</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>350</y><w>520</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;110;270;110;270;10;500;10</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>430</y><w>570</w><h>390</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;370;550;370;550;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>520</x><y>20</y><w>300</w><h>200</h></coordinates><panel_attributes>If User.admin == true
+  Access = admin
+else
+  if User.id == Element.creator*
+    Access = readWrite
+  else
+     if Element.shared* == true
+        Access = readOnly
+     else
+        Access = null
+
+*Element == Person || Product || Company || Project
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element></diagram>
